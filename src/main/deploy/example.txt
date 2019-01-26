@@ -1,0 +1,35 @@
+Files placed in this directory will be deployed to the RoboRIO into the
+'deploy' directory in the home folder. Use the 'Filesystem.getDeployDirectory' wpilib function
+to get a proper path relative to the deploy directory.
+
+
+Intake Mechanism
+
+Intake and Outtake (Set Function)
+        Arm PID Code
+        Motors:
+                2 intake motors
+                1 arm motor
+Shooter Mechanism
+        Intake and Outtake (Set Function)
+        Arm PID Code
+        Motors:
+                2 intake motors
+                1 arm motor
+Hatch Mechanism
+        Motors for moving hatch mechanism thingy (maybe PID idk)
+        Pneumatic or motor for deploying hatch
+        Motors:
+                1 movement motor
+ Drive Mechanism
+         Drive with wheel code
+         PID auto Drive(maybe)
+                6 motors
+
+
+
+
+
+
+
+
