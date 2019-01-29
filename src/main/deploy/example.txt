@@ -4,26 +4,26 @@ to get a proper path relative to the deploy directory.
 
 
 Intake Mechanism
-
-Intake and Outtake (Set Function)
-        Arm PID Code
-        Motors:
+     ☻☻☻   Intake and Outtake (Set Function)
+     ☺☺☺   Arm PID Code
+     ☻☻☻   Motors:
                 2 intake motors
                 1 arm motor
 Shooter Mechanism
-        Intake and Outtake (Set Function)
-        Arm PID Code
-        Motors:
+     ☻☻☻   Intake and Outtake (Set Function)
+     ☺☺☺   Arm PID Code
+     ☻☻☻   Motors:
                 2 intake motors
                 1 arm motor
 Hatch Mechanism
-        Motors for moving hatch mechanism thingy (maybe PID idk)
-        Pneumatic or motor for deploying hatch
-        Motors:
+     ☺☺☺   Motors for moving hatch mechanism thingy (maybe PID idk)
+     ☺☺☺   Pneumatic or motor for deploying hatch
+     ☻☻☻   Motors:
                 1 movement motor
  Drive Mechanism
-         Drive with wheel code
-         PID auto Drive(maybe)
+     ☻☻☻    Drive with wheel code
+     ☺☺☺    PID auto Drive(maybe)
+     ☻☻☻    Motors:
                 6 motors
 
 

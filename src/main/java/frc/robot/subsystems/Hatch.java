@@ -20,11 +20,11 @@ public class Hatch extends Subsystem {
   RobotMap map = new RobotMap();
 
   public void grabHatch(){
-    RobotMap.hatchMotor1.set(ControlMode.PercentOutput, .5);
+    RobotMap.hatchMotor.set(ControlMode.PercentOutput, .5);
   }
   
   public void ejectHatch(){
-    RobotMap.hatchMotor1.set(ControlMode.PercentOutput, -.5);
+    RobotMap.hatchMotor.set(ControlMode.PercentOutput, -.5);
   }
 
   @Override

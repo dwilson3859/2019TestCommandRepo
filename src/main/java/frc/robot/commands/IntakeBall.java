@@ -9,26 +9,24 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.RobotMap;
+import frc.robot.Constants;
 
-public class DriveWithJoy extends Command {
-
-
-  public DriveWithJoy(){
-    requires(RobotMap.driveTrain);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+public class IntakeBall extends Command {
+  public IntakeBall() {
+    requires(RobotMap.intake);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    RobotMap.driveTrain.configDriveTrain();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.driveTrain.joystickDrive(RobotMap.oi.joy1, RobotMap.oi.joy2);
+    RobotMap.intake.setIntakeArm(Constants.intakeArm__Intake);
+    RobotMap.intake.suck();
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,6 +38,8 @@ public class DriveWithJoy extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    RobotMap.intake.setIntakeArm(Constants.intakeArm__Stow);
+    RobotMap.intake.stop();
   }
 
   // Called when another command which requires one or more of the same

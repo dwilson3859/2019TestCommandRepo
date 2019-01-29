@@ -24,26 +24,37 @@ public class RobotMap {
   public static OI oi = new OI();
   public static Autonomous auto = new Autonomous();
   public static Hatch hatch = new Hatch();
+  public static BallEjector ballEjector = new BallEjector();
+  public static Intake intake = new Intake();
 
   //left drive motors
   public static TalonSRX leftDrive = new TalonSRX(1);
   public static VictorSPX leftFollow1 = new VictorSPX(2);
   public static VictorSPX leftFollow2 = new VictorSPX(3);
 
+  //right drive motors
+  public static TalonSRX rightDrive = new TalonSRX(6);
+  public static VictorSPX rightFollow1 = new VictorSPX(7);
+  public static VictorSPX rightFollow2 = new VictorSPX(8);
 
   //Ball Intake motors
-  public static VictorSPX intake = new VictorSPX(13);
-  public static VictorSPX rightIntakeArm = new VictorSPX(12);
-  public static TalonSRX leftIntakeArm = new TalonSRX(11);
+  public static VictorSPX leftIntake = new VictorSPX(13);
+  public static VictorSPX rightIntake = new VictorSPX(12);
+  public static TalonSRX intakeArm = new TalonSRX(11);
 
   //Ball Ejector
-  public static VictorSPX ejectRollers = new VictorSPX(16);
-  public static TalonSRX rightEjectArm = new TalonSRX(14);
-  public static TalonSRX leftEjectArm = new TalonSRX(15);
+  public static VictorSPX leftRoller = new VictorSPX(16);
+  public static TalonSRX rightRoller = new TalonSRX(14);
+  public static TalonSRX ejectorArm = new TalonSRX(15);
+
+  //Hatch Motors
+  public static VictorSPX hatchMotor = new VictorSPX(17);
 
   //encoders
   public static SensorCollection leftEncoder = new SensorCollection(leftDrive);
   public static SensorCollection rightEncoder = new SensorCollection(rightDrive);
+  public static SensorCollection intakeEncoder = new SensorCollection(intakeArm);
+  public static SensorCollection ejectorEncoder = new SensorCollection(ejectorArm);
 
   //gyro
   public static ADXRS450_Gyro gyro = new ADXRS450_Gyro();

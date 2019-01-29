@@ -35,7 +35,7 @@ public class Autonomous extends Subsystem {
  static final double wheel_diameter = .70204; // in meters
 
  //mapping output of PathWeaver
- static final String pathName = "PathWeaver.ouput.tesuto";
+ static final String pathName = "tesuto";
 
  // idk what this does
  EncoderFollower leftFollower;

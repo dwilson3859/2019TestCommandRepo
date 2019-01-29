@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import jaci.pathfinder.followers.EncoderFollower;
+import frc.robot.Constants;
 import frc.robot.OI;
 import frc.robot.RobotMap;
 
@@ -22,6 +23,8 @@ public class DriveTrain extends Subsystem {
   
  //Max Velocity of Robot in m/s 
  static final double maxVel = 12;
+ 
+
 
  //set pid for autopath
  static double kp = 1;
@@ -46,7 +49,7 @@ public class DriveTrain extends Subsystem {
   beginning of functions in drive class
 
   */
-  public void configMotors(){
+  public void configDriveTrain(){
     //left drivetrain
     RobotMap.leftFollow1.follow(RobotMap.leftDrive);
     RobotMap.leftFollow2.follow(RobotMap.leftDrive);
@@ -54,6 +57,10 @@ public class DriveTrain extends Subsystem {
     //right drivetrain
     RobotMap.rightFollow1.follow(RobotMap.rightDrive);
     RobotMap.rightFollow2.follow(RobotMap.rightDrive);
+
+    //drivetrain encoders
+    RobotMap.leftEncoder.setQuadraturePosition(0, Constants.timeoutMs);
+    RobotMap.rightEncoder.setQuadraturePosition(0, Constants.timeoutMs);
   }
 
   public void setLeftSpeed(double speed){

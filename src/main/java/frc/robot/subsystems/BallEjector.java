@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Constants;
 import frc.robot.RobotMap;
 
 /**
@@ -17,8 +18,22 @@ import frc.robot.RobotMap;
  */
 public class BallEjector extends Subsystem {
 
+  public void configEjectorEncoder(){
+    RobotMap.ejectorEncoder.setQuadraturePosition(0, Constants.timeoutMs);
+  }
+
   public void spit(){
-    RobotMap.ejectRollers.set(ControlMode.PercentOutput, .8);
+    RobotMap.rightRoller.set(ControlMode.PercentOutput, .8);
+    RobotMap.leftRoller.set(ControlMode.PercentOutput, .8);
+  }
+
+  public void suck(){
+    RobotMap.rightRoller.set(ControlMode.PercentOutput, -.8);
+    RobotMap.leftRoller.set(ControlMode.PercentOutput, -.8);
+  }
+
+  public void setEjectorArm(int position){
+    RobotMap.ejectorArm.set(ControlMode.MotionMagic, position);
   }
 
 

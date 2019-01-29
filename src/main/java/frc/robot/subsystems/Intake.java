@@ -10,24 +10,39 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Constants;
 import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
-public class IntakeArm extends Subsystem {
+public class Intake extends Subsystem {
 
-  public void suck(){
-    RobotMap.intake.set(ControlMode.PercentOutput, .8);
+  public void configIntakeEncoder(){
+    RobotMap.intakeEncoder.setQuadraturePosition(0, Constants.timeoutMs);
   }
 
-  // public void setIntakeArm(double position){
-  //   RobotMap.leftIntakeArm.set(ControlMode.Position, position);
-  //   RobotMap.rightIntakeArm.set(ControlMode.Position, position);
-  // }
+  public void suck(){
+    RobotMap.leftIntake.set(ControlMode.PercentOutput, .8);
+    RobotMap.rightIntake.set(ControlMode.PercentOutput, .8);
+  }
+
+  public void spit(){
+    RobotMap.leftIntake.set(ControlMode.PercentOutput, -.8);
+    RobotMap.rightIntake.set(ControlMode.PercentOutput, -.8);
+  }
+
+  public void stop(){
+    RobotMap.leftIntake.set(ControlMode.PercentOutput, 0);
+    RobotMap.rightIntake.set(ControlMode.PercentOutput, 0);
+  }
+
+  public void setIntakeArm(int position){
+    RobotMap.intakeArm.set(ControlMode.MotionMagic, position);
+  }
 
   // public void raiseIntakeArm(){
-  //   setIntakeArm(position);
+  //   RobotMap.intakeArm.set(ControlMode.MotionMagic, 1000);//must fix later
   // }
 
   @Override
