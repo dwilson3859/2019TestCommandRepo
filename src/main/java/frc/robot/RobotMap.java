@@ -10,6 +10,9 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 import com.ctre.phoenix.motorcontrol.SensorCollection;
 import frc.robot.subsystems.*;
 /**
@@ -49,6 +52,7 @@ public class RobotMap {
 
   //Hatch Motors
   public static VictorSPX hatchMotor = new VictorSPX(17);
+  public static DoubleSolenoid middleFinger = new DoubleSolenoid(0, 1);
 
   //encoders
   public static SensorCollection leftEncoder = new SensorCollection(leftDrive);
@@ -58,6 +62,11 @@ public class RobotMap {
 
   //gyro
   public static ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+
+  //limit switch
+  public static DigitalInput frontLimitSwitch = new DigitalInput(0);
+  public static DigitalInput backLimitSwitch = new DigitalInput(1);
+  
 
 
 

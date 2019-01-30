@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -15,17 +16,33 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
  * Add your docs here.
  */
 public class Hatch extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+  
   RobotMap map = new RobotMap();
 
-  public void grabHatch(){
-    RobotMap.hatchMotor.set(ControlMode.PercentOutput, .5);
+  //grab hatch
+  public void giveDaMiddleFinger(){
+    RobotMap.middleFinger.set(Value.kForward);
   }
-  
-  public void ejectHatch(){
-    RobotMap.hatchMotor.set(ControlMode.PercentOutput, -.5);
+
+  //lets go of match
+  public void putDownDaMiddleFinger(){
+    RobotMap.middleFinger.set(Value.kForward);
   }
+
+  //tell hatch to roll out
+  public void hatchDeploy(){
+    RobotMap.hatchMotor.set(ControlMode.PercentOutput, .2);
+  }
+
+  //tell hatch to retreat
+  public void hatchRetract(){
+    RobotMap.hatchMotor.set(ControlMode.PercentOutput, -.2);
+  }
+
+  public Boolean isHatchOut(){
+    return RobotMap.frontLimitSwitch.get();
+  }
+
 
   @Override
   public void initDefaultCommand() {

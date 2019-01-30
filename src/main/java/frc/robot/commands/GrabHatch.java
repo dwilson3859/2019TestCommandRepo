@@ -18,12 +18,16 @@ public class GrabHatch extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hatch.grabHatch();
+    if(RobotMap.hatch.isHatchOut()){
+      
+    }
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
