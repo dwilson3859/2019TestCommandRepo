@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.DriveWithJoy;
 import frc.robot.commands.PathFollower;
-import frc.robot.subsystems.Autonomous;
+import frc.robot.subsystems.*;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -23,6 +23,11 @@ import frc.robot.subsystems.Autonomous;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  public static DriveTrain driveTrain = new DriveTrain();
+  public static Hatch hatch = new Hatch();
+  public static BallEjector ballEjector = new BallEjector();
+  public static Intake intake = new Intake();
   public static Autonomous auto = new Autonomous();
   public static OI oi;
 

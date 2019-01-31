@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import com.ctre.phoenix.motorcontrol.SensorCollection;
-import frc.robot.subsystems.*;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -22,13 +21,6 @@ import frc.robot.subsystems.*;
  * floating around.
  */
 public class RobotMap {
-
-  public static DriveTrain driveTrain = new DriveTrain();
-  public static OI oi = new OI();
-  public static Autonomous auto = new Autonomous();
-  public static Hatch hatch = new Hatch();
-  public static BallEjector ballEjector = new BallEjector();
-  public static Intake intake = new Intake();
 
   //left drive motors
   public static TalonSRX leftDrive = new TalonSRX(1);
