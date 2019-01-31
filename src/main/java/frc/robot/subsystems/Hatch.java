@@ -39,8 +39,8 @@ public class Hatch extends Subsystem {
     RobotMap.hatchMotor.set(ControlMode.PercentOutput, -.2);
   }
 
-  public Boolean isHatchOut(){
-    return RobotMap.frontLimitSwitch.get();
+  public Boolean isHatchRetracted(){
+    return RobotMap.backLimitSwitch.get();
   }
 
 
