@@ -8,23 +8,23 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.RobotMap;
+import frc.robot.Robot;
 
 public class PathFollower extends Command {
   public PathFollower() {
-    requires(RobotMap.auto);
+    requires(Robot.auto);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    RobotMap.auto.autoConfig();
+    Robot.auto.autoConfig();
   }
   
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.auto.followPath();
+    Robot.auto.followPath();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -36,7 +36,7 @@ public class PathFollower extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    RobotMap.driveTrain.stopDrive();
+    Robot.driveTrain.stopDrive();
   }
 
   // Called when another command which requires one or more of the same

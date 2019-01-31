@@ -8,11 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.RobotMap;
+import frc.robot.Robot;
 
 public class GrabHatch extends Command {
   public GrabHatch() {
-	requires(RobotMap.hatch);
+	requires(Robot.hatch);
   }
 
   // Called just before this Command runs the first time
@@ -24,10 +24,10 @@ public class GrabHatch extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(RobotMap.hatch.isHatchRetracted()){
-      RobotMap.hatch.hatchDeploy();
+    if(Robot.hatch.isHatchRetracted()){
+      Robot.hatch.hatchDeploy();
     }else{
-      RobotMap.hatch.giveDaMiddleFinger();
+      Robot.hatch.giveDaMiddleFinger();
     }
     
   }

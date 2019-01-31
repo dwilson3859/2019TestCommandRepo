@@ -8,11 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.RobotMap;
+import frc.robot.Robot;
 
 public class ReleaseHatch extends Command {
   public ReleaseHatch() {
-    requires(RobotMap.hatch);
+    requires(Robot.hatch);
   }
 
   // Called just before this Command runs the first time
@@ -23,10 +23,10 @@ public class ReleaseHatch extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(RobotMap.hatch.isHatchRetracted()){
-      RobotMap.hatch.hatchDeploy();
+    if(Robot.hatch.isHatchRetracted()){
+      Robot.hatch.hatchDeploy();
     }else{  
-      RobotMap.hatch.putDownDaMiddleFinger();
+      Robot.hatch.putDownDaMiddleFinger();
         }
   }
 

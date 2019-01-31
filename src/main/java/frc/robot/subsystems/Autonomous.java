@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.Notifier;
 import jaci.pathfinder.Pathfinder;
@@ -72,8 +73,8 @@ public void followPath(){
     double desiredHeading = Pathfinder.r2d(leftFollower.getHeading());
     double headingDifference = Pathfinder.boundHalfDegrees(desiredHeading - heading);
     double turn = 0.8 * (-1.0/80.0) * headingDifference;
-    RobotMap.driveTrain.setLeftSpeed(leftSpeed + turn);
-    RobotMap.driveTrain.setRightSpeed(rightSpeed - turn);
+    Robot.driveTrain.setLeftSpeed(leftSpeed + turn);
+    Robot.driveTrain.setRightSpeed(rightSpeed - turn);
   
   }
 }

@@ -8,12 +8,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.RobotMap;
+import frc.robot.Robot;
 import frc.robot.Constants;
 
 public class IntakeBall extends Command {
   public IntakeBall() {
-    requires(RobotMap.intake);
+    requires(Robot.intake);
   }
 
   // Called just before this Command runs the first time
@@ -24,8 +24,8 @@ public class IntakeBall extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.intake.setIntakeArm(Constants.intakeArm__Intake);
-    RobotMap.intake.suck();
+    Robot.intake.setIntakeArm(Constants.intakeArm__Intake);
+    Robot.intake.suck();
 
   }
 
@@ -38,8 +38,8 @@ public class IntakeBall extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    RobotMap.intake.setIntakeArm(Constants.intakeArm__Stow);
-    RobotMap.intake.stop();
+    Robot.intake.setIntakeArm(Constants.intakeArm__Stow);
+    Robot.intake.stop();
   }
 
   // Called when another command which requires one or more of the same
