@@ -8,12 +8,13 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Notifier;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import jaci.pathfinder.followers.EncoderFollower;
 import frc.robot.Constants;
-import frc.robot.OI;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 /**
@@ -81,8 +82,13 @@ public class DriveTrain extends Subsystem {
     setRightSpeed(j2.getY());
   }
 
+  public void xboxDrive(){
+    setLeftSpeed(Robot.oi.xbox.getY(Hand.kLeft));
+    setRightSpeed(Robot.oi.xbox.getY(Hand.kRight));
+  }
+
   @Override
   public void initDefaultCommand() {
-    joystickDrive(OI.joy1, OI.joy2);
+    joystickDrive(Robot.oi.joy1, Robot.oi.joy2);
   }
 }

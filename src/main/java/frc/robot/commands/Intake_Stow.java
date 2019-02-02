@@ -10,26 +10,19 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class GrabHatch extends Command {
-  public GrabHatch() {
-	requires(Robot.hatch);
+public class Intake_Stow extends Command {
+  public Intake_Stow() {
+    requires(Robot.intake);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(Robot.hatch.isHatchRetracted()){
-      Robot.hatch.hatchDeploy();
-    }else{
-      Robot.hatch.giveDaMiddleFinger();
-    }
-    
   }
 
   // Make this return true when this Command no longer needs to run execute()

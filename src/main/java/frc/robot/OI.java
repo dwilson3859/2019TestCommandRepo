@@ -8,6 +8,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.*;
+import frc.robot.commands.Intake_IntakeBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,8 +18,13 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
-  public static Joystick joy1 = new Joystick(0);
-  public static Joystick joy2 = new Joystick(1);
+  public Joystick joy1 = new Joystick(1);
+  public Joystick joy2 = new Joystick(2);
+  public XboxController xbox = new XboxController(0);
+
+   public OI(){
+     new JoystickButton(xbox, 1).whenPressed(new Intake_IntakeBall());
+   }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -40,6 +48,7 @@ public class OI {
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
   // button.whileHeld(new ExampleCommand());
+  
 
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.

@@ -9,7 +9,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.Constants;
 
 public class Intake_IntakeBall extends Command {
   public Intake_IntakeBall() {
@@ -24,7 +23,7 @@ public class Intake_IntakeBall extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.intake.setIntakeArm(Constants.intakeArm__Intake);
+    // Robot.intake.setIntakeArm(Constants.intakeArm__Intake);
     Robot.intake.suck();
 
   }
@@ -38,7 +37,7 @@ public class Intake_IntakeBall extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.intake.setIntakeArm(Constants.intakeArm__Stow);
+    // Robot.intake.setIntakeArm(Constants.intakeArm__Stow);
     Robot.intake.stop();
   }
 

@@ -33,8 +33,8 @@ public class RobotMap {
   public static VictorSPX rightFollow2 = new VictorSPX(8);
 
   //Ball Intake motors
-  public static VictorSPX leftIntake = new VictorSPX(13);
-  public static VictorSPX rightIntake = new VictorSPX(12);
+  public static VictorSPX leftIntake = new VictorSPX(5);
+  public static VictorSPX rightIntake = new VictorSPX(10);
   public static TalonSRX intakeArm1 = new TalonSRX(9);
   public static VictorSPX intakeArm2 = new VictorSPX(4);
 

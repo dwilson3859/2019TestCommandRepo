@@ -20,7 +20,7 @@ public class Intake extends Subsystem {
 
   public void configIntakeEncoder(){
     RobotMap.intakeEncoder.setQuadraturePosition(0, Constants.timeoutMs);
-  }
+  } 
 
   public void suck(){
     RobotMap.leftIntake.set(ControlMode.PercentOutput, .8);
