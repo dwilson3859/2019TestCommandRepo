@@ -38,7 +38,8 @@ public class Intake extends Subsystem {
   }
 
   public void setIntakeArm(int position){
-    RobotMap.intakeArm.set(ControlMode.MotionMagic, position);
+    RobotMap.intakeArm1.set(ControlMode.MotionMagic, position);
+    RobotMap.intakeArm2.set(ControlMode.MotionMagic, position);
   }
 
   // public void raiseIntakeArm(){

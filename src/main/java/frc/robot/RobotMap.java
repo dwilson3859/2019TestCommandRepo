@@ -35,7 +35,8 @@ public class RobotMap {
   //Ball Intake motors
   public static VictorSPX leftIntake = new VictorSPX(13);
   public static VictorSPX rightIntake = new VictorSPX(12);
-  public static TalonSRX intakeArm = new TalonSRX(11);
+  public static TalonSRX intakeArm1 = new TalonSRX(9);
+  public static VictorSPX intakeArm2 = new VictorSPX(4);
 
   //Ball Ejector
   public static VictorSPX leftRoller = new VictorSPX(16);
@@ -49,7 +50,7 @@ public class RobotMap {
   //encoders
   public static SensorCollection leftEncoder = new SensorCollection(leftDrive);
   public static SensorCollection rightEncoder = new SensorCollection(rightDrive);
-  public static SensorCollection intakeEncoder = new SensorCollection(intakeArm);
+  public static SensorCollection intakeEncoder = new SensorCollection(intakeArm1);
   public static SensorCollection ejectorEncoder = new SensorCollection(ejectorArm);
 
   //gyro

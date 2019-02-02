@@ -24,11 +24,11 @@ import frc.robot.subsystems.*;
  */
 public class Robot extends TimedRobot {
 
-  public static DriveTrain driveTrain = new DriveTrain();
-  public static Hatch hatch = new Hatch();
-  public static BallEjector ballEjector = new BallEjector();
-  public static Intake intake = new Intake();
-  public static Autonomous auto = new Autonomous();
+  public static DriveTrain driveTrain;
+  public static Hatch hatch;
+  public static BallEjector ballEjector;
+  public static Intake intake;
+  public static Autonomous auto;
   public static OI oi;
 
   Command m_autonomousCommand;
@@ -40,7 +40,16 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+
+    //initializing new instances of classes
     oi = new OI();
+    driveTrain = new DriveTrain();
+    hatch = new Hatch();
+    ballEjector = new BallEjector();
+    intake = new Intake();
+    auto = new Autonomous();
+
+
     m_chooser.setDefaultOption("Default Auto", new DriveWithJoy());
     m_chooser.addOption("My Auto", new PathFollower());
     SmartDashboard.putData("Auto mode", m_chooser);
