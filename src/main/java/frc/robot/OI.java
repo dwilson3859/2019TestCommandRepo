@@ -21,9 +21,12 @@ public class OI {
   public Joystick joy1 = new Joystick(1);
   public Joystick joy2 = new Joystick(2);
   public XboxController xbox = new XboxController(0);
+  Button intakeButton = new JoystickButton(xbox, 1);
 
    public OI(){
-     new JoystickButton(xbox, 1).whenPressed(new Intake_IntakeBall());
+
+     intakeButton.whileActive(new Intake_IntakeBall());
+
    }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a

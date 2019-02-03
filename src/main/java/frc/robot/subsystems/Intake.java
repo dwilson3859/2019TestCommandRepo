@@ -23,13 +23,13 @@ public class Intake extends Subsystem {
   } 
 
   public void suck(){
-    RobotMap.leftIntake.set(ControlMode.PercentOutput, .8);
-    RobotMap.rightIntake.set(ControlMode.PercentOutput, .8);
+    RobotMap.leftIntake.set(ControlMode.PercentOutput, .4);
+    RobotMap.rightIntake.set(ControlMode.PercentOutput, .4);
   }
 
   public void spit(){
-    RobotMap.leftIntake.set(ControlMode.PercentOutput, -.8);
-    RobotMap.rightIntake.set(ControlMode.PercentOutput, -.8);
+    RobotMap.leftIntake.set(ControlMode.PercentOutput, -.4);
+    RobotMap.rightIntake.set(ControlMode.PercentOutput, -.4);
   }
 
   public void stop(){

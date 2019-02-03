@@ -42,12 +42,12 @@ public class Robot extends TimedRobot {
   public void robotInit() {
 
     //initializing new instances of classes
-    oi = new OI();
     driveTrain = new DriveTrain();
     hatch = new Hatch();
     ballEjector = new BallEjector();
     intake = new Intake();
     auto = new Autonomous();
+    oi = new OI();
 
 
     m_chooser.setDefaultOption("Default Auto", new DriveWithJoy());

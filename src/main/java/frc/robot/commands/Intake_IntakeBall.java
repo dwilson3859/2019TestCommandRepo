@@ -25,15 +25,19 @@ public class Intake_IntakeBall extends Command {
   protected void execute() {
     // Robot.intake.setIntakeArm(Constants.intakeArm__Intake);
     Robot.intake.suck();
+    System.out.println("A Button is Released" + Robot.oi.xbox.getAButtonReleased());
 
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+  if(Robot.oi.xbox.getAButtonReleased()){
+    return true;
+   }else{
     return false;
+   }
   }
-
   // Called once after isFinished returns true
   @Override
   protected void end() {
